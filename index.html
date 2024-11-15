@@ -1,0 +1,1594 @@
+<html><head><base href=".">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Farrafina Modelli - L'Essence de l'Afrique à Portée de Clic</title>
+<style>
+:root {
+  --dark-brown: #2C1810;
+  --light-brown: #A67B5B;
+  --cream: #FFF9F0;
+  --beige: #F0E2CC;
+  --accent-gold: #FFB800;
+  --accent-teal: #00B9B4;
+  --accent-coral: #FF6B6B;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background-color: var(--cream);
+}
+
+header {
+  background: linear-gradient(135deg, var(--dark-brown), var(--light-brown));
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.brand {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.brand h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  background: linear-gradient(45deg, var(--accent-gold), #FFF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+  letter-spacing: 2px;
+}
+
+.brand h1:hover {
+  transform: scale(1.02);
+}
+
+.slogan {
+  font-style: italic;
+  font-size: 1.2rem;
+  font-family: 'Playfair Display', serif;
+  opacity: 0.9;
+  letter-spacing: 0.5px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  position: relative;
+  padding: 0.7rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 500;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+nav a:hover {
+  background: rgba(255,255,255,0.1);
+  transform: translateY(-2px);
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--beige);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+nav a:hover {
+  color: var(--beige);
+}
+
+nav a:hover::after {
+  width: 80%;
+}
+
+.currency-selector {
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  z-index: 997;
+}
+
+.currency-selector select {
+  background: rgba(255,255,255,0.1);
+  border: 2px solid rgba(255,255,255,0.2);
+  border-radius: 25px;
+  padding: 0.5rem 1.5rem;
+  color: white;
+  font-weight: 500;
+}
+
+.user-account {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 997;
+}
+
+.account-button {
+  background: var(--dark-brown);
+  color: white;
+  border: 1px solid var(--beige);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.account-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  width: 200px;
+  z-index: 1000;
+}
+
+.account-dropdown.active {
+  display: block;
+}
+
+.login-form {
+  padding: 1rem;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid var(--beige);
+  border-radius: 4px;
+}
+
+.user-type-select {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid var(--beige);
+  border-radius: 4px;
+}
+
+.login-button {
+  width: 100%;
+  background: var(--dark-brown);
+  color: white;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.register-link {
+  display: block;
+  text-align: center;
+  margin-top: 0.5rem;
+  color: var(--dark-brown);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.banner {
+  background: linear-gradient(45deg, var(--dark-brown), var(--accent-teal));
+  color: white;
+  text-align: center;
+  padding: 6rem 2rem;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+.banner h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.cta-button {
+  background: linear-gradient(45deg, var(--accent-coral), var(--accent-teal));
+  color: white;
+  padding: 0.8rem 1.8rem;
+  border-radius: 25px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 7px 14px rgba(0,0,0,0.1);
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.product-card {
+  background: linear-gradient(145deg, #ffffff, #f5f5f5);
+  border-radius: 16px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 
+    0 10px 20px rgba(0,0,0,0.05),
+    0 6px 6px rgba(0,0,0,0.1);
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.product-card:hover {
+  transform: translateY(-10px) scale(1.02);
+}
+
+.product-origin {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: var(--accent-teal);
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+.product-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  animation: float 6s ease-in-out infinite;
+}
+
+.product-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: var(--dark-brown);
+  margin: 1rem 0;
+}
+
+.product-price {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: var(--accent-gold);
+  margin-bottom: 1rem;
+}
+
+.add-to-cart {
+  background: linear-gradient(45deg, var(--accent-coral), var(--accent-teal));
+  border-radius: 25px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 0.8rem 1.8rem;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.add-to-cart:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 7px 14px rgba(0,0,0,0.1);
+}
+
+footer {
+  background: linear-gradient(to right, var(--dark-brown), var(--light-brown));
+  color: white;
+  text-align: center;
+  padding: 3rem 2rem;
+  margin-top: 2rem;
+}
+
+.social-links {
+  margin-top: 1rem;
+}
+
+.social-links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 1rem;
+  transition: all 0.3s ease;
+  opacity: 0.8;
+  padding: 0.5rem 1rem;
+}
+
+.social-links a:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+/* Add to existing CSS */
+.cart-widget {
+  position: fixed;
+  top: 0;
+  right: -400px;
+  width: 400px;
+  height: 100vh;
+  background: white;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+  transition: right 0.3s ease;
+  z-index: 1001;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.cart-widget.active {
+  right: 0;
+}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--beige);
+}
+
+.close-cart {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--dark-brown);
+}
+
+.cart-items {
+  margin: 1rem 0;
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 80px 1fr auto;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--beige);
+  transition: background-color 0.3s ease;
+}
+
+.cart-item:hover {
+  background: var(--cream);
+}
+
+.cart-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.cart-item-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.cart-quantity {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.quantity-btn {
+  background: var(--beige);
+  border: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cart-summary {
+  margin-top: 2rem;
+  padding: 1rem;
+  background: var(--cream);
+  border-radius: 4px;
+}
+
+.shipping-form {
+  margin: 2rem 0;
+}
+
+.shipping-form input,
+.shipping-form select {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--beige);
+  border-radius: 4px;
+}
+
+.payment-methods {
+  margin: 2rem 0;
+}
+
+.payment-method {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid var(--beige);
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.checkout-button {
+  width: 100%;
+  background: var(--dark-brown);
+  color: white;
+  padding: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.country-filter {
+  margin: 1rem 0;
+  text-align: center;
+}
+
+#country-select {
+  padding: 0.5rem;
+  width: 200px;
+  background: var(--dark-brown);
+  color: white;
+  border: 1px solid var(--beige);
+  border-radius: 4px;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  z-index: 1000;
+}
+
+.bar {
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 998;
+}
+
+.overlay.active {
+  display: block;
+}
+
+/* Update the nav styles */
+@media screen and (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+  
+  nav {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 250px;
+    height: 100vh;
+    background: var(--dark-brown);
+    flex-direction: column;
+    padding: 80px 20px;
+    transition: left 0.3s ease;
+    z-index: 999;
+  }
+  
+  nav.active {
+    left: 0;
+  }
+  
+  .menu-toggle.active .bar:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+  }
+  
+  .menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .menu-toggle.active .bar:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .products {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  select#currency {
+    height: 44px;
+    padding: 0.5rem;
+    background-color: var(--dark-brown);
+    color: white;
+    border: 1px solid var(--beige);
+    border-radius: 4px;
+  }
+
+  .search-bar {
+    background: white;
+    border-radius: 30px;
+    padding: 0.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  .search-bar input {
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.1rem;
+  }
+
+  .search-bar button {
+    background: linear-gradient(45deg, var(--accent-coral), var(--accent-teal));
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    transition: all 0.3s ease;
+  }
+
+  .social-links a {
+    padding: 0.5rem;
+    display: inline-block;
+    margin: 0.5rem;
+  }
+
+  .user-account {
+    position: static;
+    text-align: right;
+    padding: 1rem;
+  }
+  
+  .account-dropdown {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 300px;
+  }
+}
+
+/* Add to existing CSS */
+.collection-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  z-index: 1002;
+  overflow-y: auto;
+}
+
+.exclusive-collection {
+  background: var(--cream);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 8px;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.collection-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.collection-header h2 {
+  font-family: 'Playfair Display', serif;
+  color: var(--dark-brown);
+  font-size: 2.5rem;
+}
+
+.close-collection {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--dark-brown);
+}
+
+.collection-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.collection-item {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.collection-item:hover {
+  transform: translateY(-10px);
+}
+
+.collection-origin {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: var(--dark-brown);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+}
+
+.collection-item img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.collection-item h3 {
+  color: var(--dark-brown);
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.collection-item p {
+  color: var(--light-brown);
+  margin-bottom: 1rem;
+}
+
+.exclusive-price {
+  display: block;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--dark-brown);
+  margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .collection-overlay {
+    padding: 1rem;
+  }
+  
+  .exclusive-collection {
+    padding: 1rem;
+  }
+  
+  .collection-header h2 {
+    font-size: 1.8rem;
+  }
+  
+  .collection-item {
+    padding: 1rem;
+  }
+}
+
+/* Add to existing CSS */
+.search-bar {
+  width: 100%;
+  max-width: 600px;
+  margin: 1rem auto;
+  position: relative;
+  display: flex;
+}
+
+.filters {
+  background: linear-gradient(145deg, #ffffff, #f5f5f5);
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.filter-section {
+  margin-bottom: 1rem;
+}
+
+.filter-section h3 {
+  color: var(--dark-brown);
+  margin-bottom: 0.5rem;
+}
+
+.price-range input {
+  width: 100%;
+  margin: 0.5rem 0;
+}
+
+.rating-filter label {
+  display: block;
+  margin: 0.3rem 0;
+}
+
+.breadcrumb {
+  padding: 1rem;
+  background: white;
+  margin-bottom: 1rem;
+}
+
+.breadcrumb a {
+  color: var(--dark-brown);
+  text-decoration: none;
+}
+
+.breadcrumb span {
+  margin: 0 0.5rem;
+  color: #666;
+}
+
+.product-rating {
+  color: var(--accent-gold);
+  margin: 0.5rem 0;
+}
+
+.review-count {
+  color: var(--light-brown);
+  font-size: 0.9rem;
+}
+
+.recommendations {
+  padding: 2rem;
+  background: white;
+  margin-top: 2rem;
+}
+
+.recommendations h2 {
+  color: var(--dark-brown);
+  margin-bottom: 1rem;
+}
+
+.recommendation-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.product-detail-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  z-index: 1002;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.product-detail-modal {
+  background: linear-gradient(145deg, #ffffff, #f5f5f5);
+  border-radius: 24px;
+  max-width: 1200px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding: 2rem;
+  position: relative;
+}
+
+.close-detail {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--dark-brown);
+}
+
+.product-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.main-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.thumbnail-gallery {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+}
+
+.thumbnail-gallery img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.product-info {
+  padding: 1rem;
+}
+
+.product-story, .artisan-info {
+  margin: 2rem 0;
+}
+
+@media (max-width: 768px) {
+  .product-detail-modal {
+    grid-template-columns: 1fr;
+  }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+  <header>
+    <button class="menu-toggle">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+    <div class="overlay"></div>
+    
+    <div class="user-account">
+      <button class="account-button">
+        <i class="fas fa-user"></i> Mon Compte
+      </button>
+      <div class="account-dropdown">
+        <form class="login-form">
+          <select class="user-type-select">
+            <option value="">Sélectionnez votre profil</option>
+            <option value="buyer">Acheteur</option>
+            <option value="seller">Vendeur</option>
+          </select>
+          <input type="email" placeholder="Email" required>
+          <input type="password" placeholder="Mot de passe" required>
+          <button type="submit" class="login-button">Se connecter</button>
+          <a href="https://farrafina-modelli.com/register" class="register-link">Créer un compte</a>
+        </form>
+      </div>
+    </div>
+
+    <div class="currency-selector">
+      <select id="currency">
+        <option value="XOF">FCFA</option>
+        <option value="EUR">EUR</option>
+        <option value="USD">USD</option>
+      </select>
+    </div>
+    <div class="brand">
+      <h1>Farrafina Modelli</h1>
+      <div class="slogan">L'Essence de l'Afrique à Portée de Clic</div>
+    </div>
+    <nav>
+      <a href="https://farrafina-modelli.com/vetements">Vêtements</a>
+      <a href="https://farrafina-modelli.com/accessoires">Accessoires</a>
+      <a href="https://farrafina-modelli.com/decoration">Décoration</a>
+      <a href="https://farrafina-modelli.com/artisanat">Artisanat</a>
+      <a href="https://farrafina-modelli.com/beaute">Beauté</a>
+      <a href="https://farrafina-modelli.com/notre-histoire">Notre Histoire</a>
+      <div class="country-filter">
+        <select id="country-select">
+          <option value="">Tous les pays</option>
+          <option value="senegal">Sénégal</option>
+          <option value="mali">Mali</option>
+          <option value="nigeria">Nigeria</option>
+          <option value="ghana">Ghana</option>
+          <option value="kenya">Kenya</option>
+          <option value="ethiopia">Éthiopie</option>
+          <option value="morocco">Maroc</option>
+          <option value="ivorycoast">Côte d'Ivoire</option>
+        </select>
+      </div>
+    </nav>
+  </header>
+
+  <div class="search-bar">
+    <input type="search" placeholder="Rechercher des produits africains...">
+    <button><i class="fas fa-search"></i></button>
+  </div>
+
+  <div class="breadcrumb">
+    <a href="https://farrafina-modelli.com">Accueil</a>
+    <span>/</span>
+    <a href="https://farrafina-modelli.com/vetements">Vêtements</a>
+  </div>
+
+  <div class="filters">
+    <div class="filter-section">
+      <h3>Prix</h3>
+      <div class="price-range">
+        <input type="range" min="0" max="200000" step="5000">
+        <div class="price-inputs">
+          <input type="number" placeholder="Min">
+          <input type="number" placeholder="Max">
+        </div>
+      </div>
+    </div>
+    
+    <div class="filter-section">
+      <h3>Évaluation</h3>
+      <div class="rating-filter">
+        <label>
+          <input type="checkbox">
+          ⭐⭐⭐⭐⭐ 5 étoiles
+        </label>
+        <label>
+          <input type="checkbox">
+          ⭐⭐⭐⭐ 4 étoiles et plus
+        </label>
+        <label>
+          <input type="checkbox">
+          ⭐⭐⭐ 3 étoiles et plus
+        </label>
+      </div>
+    </div>
+    
+    <div class="filter-section">
+      <h3>Livraison</h3>
+      <label>
+        <input type="checkbox">
+        Livraison internationale
+      </label>
+      <label>
+        <input type="checkbox">
+        Express disponible
+      </label>
+    </div>
+  </div>
+
+  <div class="banner">
+    <h2>Célébrez la Richesse de l'Afrique</h2>
+    <p>Découvrez notre collection unique d'articles authentiques créés par des artisans talentueux.</p>
+    <br>
+    <button class="cta-button">Découvrir notre Collection Exclusive</button>
+  </div>
+
+  <div class="products">
+    <div class="product-card" data-country="senegal">
+      <div class="product-origin">Sénégal</div>
+      <img 
+        alt="Grand boubou masculin en bazin riche brodé, couleur dorée et bordeaux avec motifs traditionnels, style sénégalais de luxe" 
+        src="https://afro-elegance.com/cdn/shop/files/boubou-bazin-riche-homme-dore-l-483_1000x.webp?v=1728818537" 
+        width="280" 
+        height="300"
+      >
+      <div class="product-title">Boubou Royal Brodé</div>
+      <div class="product-price">65 000 FCFA</div>
+      <div class="product-rating">
+        ⭐⭐⭐⭐⭐
+        <span class="review-count">(127 avis)</span>
+      </div>
+      <button class="add-to-cart">Ajouter au Panier</button>
+    </div>
+    
+    <div class="product-card" data-country="mali"> 
+      <div class="product-origin">Mali</div>
+      <img
+        alt="Ensemble tenue traditionnel en bogolan fait main, motifs géométriques noir et blanc, coton tissé artisanal"
+        src="https://i.etsystatic.com/17406633/r/il/df20c1/3840185239/il_fullxfull.3840185239_gikm.jpg"
+        width="280"
+        height="300"
+      >
+      <div class="product-title">Ensemble Bogolan</div>
+      <div class="product-price">35 000 FCFA</div>
+      <div class="product-rating">
+        ⭐⭐⭐⭐⭐
+        <span class="review-count">(88 avis)</span>
+      </div>
+      <button class="add-to-cart">Ajouter au Panier</button>
+    </div>
+
+    <div class="product-card" data-country="nigeria">
+      <div class="product-origin">Nigeria</div>
+      <img
+        alt="Robe Ankara nigériane moderne, imprimés wax multicolores vifs, coupe ajustée avec volants"
+        src="https://i.etsystatic.com/26851155/r/il/2f7b69/3053327110/il_570xN.3053327110_tnkw.jpg" 
+        width="280"
+        height="300"
+      >
+      <div class="product-title">Robe Ankara Moderne</div>
+      <div class="product-price">55 000 FCFA</div>
+      <div class="product-rating">
+        ⭐⭐⭐⭐
+        <span class="review-count">(55 avis)</span>
+      </div>
+      <button class="add-to-cart">Ajouter au Panier</button>
+    </div>
+
+    <div class="product-card" data-country="ethiopia">
+      <div class="product-origin">Éthiopie</div>
+      <img
+        alt="Robe traditionnelle Habesha blanche avec broderies dorées complexes et bordures ornées"
+        src="https://i.etsystatic.com/18078452/r/il/598083/6347995755/il_570xN.6347995755_p0qd.jpg"
+        width="280" 
+        height="300"
+      >
+      <div class="product-title">Robe Habesha Traditionnelle</div>
+      <div class="product-price">90 000 FCFA</div>
+      <div class="product-rating">
+        ⭐⭐⭐⭐⭐
+        <span class="review-count">(43 avis)</span>
+      </div>
+      <button class="add-to-cart">Ajouter au Panier</button>
+    </div>
+    
+    <div class="product-card" data-country="ghana">
+      <div class="product-origin">Ghana</div>
+      <img
+        alt="Tenue Kente tissée à la main, motifs géométriques jaune et vert, style royal ghanéen"
+        src="https://afroculture.net/wp-content/uploads/2018/10/e7d13afb4756eabcc602cbb50ed86300.jpg"
+        width="280"
+        height="300"
+      >
+      <div class="product-title">Ensemble Kente Royal</div>
+      <div class="product-price">85 000 FCFA</div>
+      <div class="product-rating">
+        ⭐⭐⭐⭐
+        <span class="review-count">(25 avis)</span>
+      </div>
+      <button class="add-to-cart">Ajouter au Panier</button>
+    </div>
+  </div>
+
+  <section class="recommendations">
+    <h2>Recommandations personnalisées</h2>
+    <div class="recommendation-grid">
+      <div class="product-card">
+        <img 
+          alt="Collier massif en perles de verre multicolores, style Masai avec pendentif en laiton"
+          src="https://i.etsystatic.com/27121998/r/il/1a43e9/4355870906/il_fullxfull.4355870906_52g1.jpg"
+          width="200"
+          height="200"
+        >
+        <div class="product-title">Collier Masai</div>
+        <div class="product-price">28 000 FCFA</div>
+        <div class="product-rating">
+          ⭐⭐⭐⭐
+          <span class="review-count">(25 avis)</span>
+        </div>
+        <button class="add-to-cart">Ajouter au Panier</button>
+      </div>
+  
+      <div class="product-card">
+        <img
+          alt="Sac à main en cuir marocain, brodé à la main avec motifs berbères, tons marron et ocre"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdn2g4fQh3Wi-LD1YoqMBWCvfh-9CKcbaYGSqzLjItzYRSPUGasOqzHT7cRTVWzKfgOyM&usqp=CAU"
+          width="200"
+          height="200"
+        >
+        <div class="product-title">Sac en Cuir Marocain</div>
+        <div class="product-price">75 000 FCFA</div>
+        <div class="product-rating">
+          ⭐⭐⭐⭐⭐
+          <span class="review-count">(17 avis)</span>
+        </div>
+        <button class="add-to-cart">Ajouter au Panier</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div>© 2024 Farrafina Modelli - L'Afrique à votre porte</div>
+    <div class="social-links">
+      <a href="https://instagram.com/farrafina_modelli"><i class="fab fa-instagram"></i> Instagram</a>
+      <a href="https://facebook.com/farrafina.modelli"><i class="fab fa-facebook"></i> Facebook</a>
+    </div>
+  </footer>
+
+<div class="cart-widget">
+  <div class="cart-header">
+    <h3>Votre Panier</h3>
+    <button class="close-cart">&times;</button>
+  </div>
+  
+  <div class="cart-items">
+    <!-- Cart items will be dynamically added here -->
+  </div>
+  
+  <div class="cart-summary">
+    <h4>Résumé de la commande</h4>
+    <div class="subtotal">Sous-total: <span>0 FCFA</span></div>
+    <div class="shipping">Livraison: <span>15000 FCFA</span></div>
+    <div class="total">Total: <span>0 FCFA</span></div>
+  </div>
+  
+  <form class="shipping-form">
+    <h4>Information de livraison</h4>
+    <input type="text" placeholder="Nom complet" required>
+    <input type="text" placeholder="Adresse" required>
+    <input type="text" placeholder="Ville" required>
+    <select name="shipping-method" required>
+      <option value="">Choisir mode de livraison</option>
+      <option value="standard">Standard (2-3 jours)</option>
+      <option value="express">Express (24h)</option>
+    </select>
+  </form>
+  
+  <div class="payment-methods">
+    <h4>Mode de paiement</h4>
+    <div class="payment-method">
+      <input type="radio" name="payment" value="orange-money">
+      <label>Orange Money</label>
+    </div>
+    <div class="payment-method">
+      <input type="radio" name="payment" value="wave">
+      <label>Wave</label>
+    </div>
+    <div class="payment-method">
+      <input type="radio" name="payment" value="paypal">
+      <label>PayPal</label>
+    </div>
+    <div class="payment-method">
+      <input type="radio" name="payment" value="paypal">
+      <label>Carte VISA</label>
+    </div>
+  </div>
+  
+  <button class="checkout-button">Procéder au paiement</button>
+</div>
+
+<script>
+// Add hamburger menu functionality
+document.querySelector('.menu-toggle').addEventListener('click', function() {
+  this.classList.toggle('active');
+  document.querySelector('nav').classList.toggle('active');
+  document.querySelector('.overlay').classList.toggle('active');
+});
+
+// Close menu when clicking overlay
+document.querySelector('.overlay').addEventListener('click', function() {
+  document.querySelector('.menu-toggle').classList.remove('active');
+  document.querySelector('nav').classList.remove('active');
+  this.classList.remove('active');
+});
+
+// Close menu when clicking a nav link
+document.querySelectorAll('nav a').forEach(link => {
+  link.addEventListener('click', function() {
+    document.querySelector('.menu-toggle').classList.remove('active');
+    document.querySelector('nav').classList.remove('active');
+    document.querySelector('.overlay').classList.remove('active');
+  });
+});
+
+// Existing currency converter code
+document.getElementById('currency').addEventListener('change', function(e) {
+  const rates = {
+    XOF: 1,
+    EUR: 0.00152,
+    USD: 0.00167
+  };
+  
+  const prices = document.querySelectorAll('.product-price');
+  prices.forEach(price => {
+    const fcfa = parseInt(price.innerText.replace(/[^0-9]/g, ''));
+    const converted = Math.round(fcfa * rates[e.target.value]);
+    
+    switch(e.target.value) {
+      case 'XOF':
+        price.innerText = `${converted.toLocaleString()} FCFA`;
+        break;
+      case 'EUR':
+        price.innerText = `${converted.toLocaleString()} €`;
+        break;
+      case 'USD':
+        price.innerText = `${converted.toLocaleString()} $`;
+        break;
+    }
+  });
+});
+
+// Add user account functionality
+document.querySelector('.account-button').addEventListener('click', function(e) {
+  e.stopPropagation();
+  document.querySelector('.account-dropdown').classList.toggle('active');
+});
+
+document.querySelector('.login-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const userType = document.querySelector('.user-type-select').value;
+  const email = document.querySelector('input[type="email"]').value;
+  const password = document.querySelector('input[type="password"]').value;
+  
+  // Here you would typically handle the login logic
+  console.log('Login attempt:', { userType, email });
+  
+  // For demonstration purposes
+  alert('Connexion en cours...');
+});
+
+// Close dropdown when clicking outside
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.user-account')) {
+    document.querySelector('.account-dropdown').classList.remove('active');
+  }
+});
+
+// Prevent dropdown from closing when clicking inside it
+document.querySelector('.account-dropdown').addEventListener('click', function(e) {
+  e.stopPropagation();
+});
+
+// Cart functionality
+let cart = [];
+
+function updateCart() {
+  const cartItems = document.querySelector('.cart-items');
+  cartItems.innerHTML = '';
+  
+  cart.forEach(item => {
+    const cartItem = document.createElement('div');
+    cartItem.className = 'cart-item';
+    cartItem.innerHTML = `
+      <img src="${item.image}" alt="${item.alt}">
+      <div class="cart-item-details">
+        <h4>${item.title}</h4>
+        <div class="cart-price">${item.price}</div>
+        <div class="cart-quantity">
+          <button class="quantity-btn" onclick="updateQuantity('${item.id}', -1)">-</button>
+          <span>${item.quantity}</span>
+          <button class="quantity-btn" onclick="updateQuantity('${item.id}', 1)">+</button>
+        </div>
+      </div>
+      <button class="remove-item" onclick="removeFromCart('${item.id}')">&times;</button>
+    `;
+    cartItems.appendChild(cartItem);
+  });
+  
+  updateCartTotal();
+}
+
+function updateCartTotal() {
+  const subtotal = cart.reduce((sum, item) => {
+    const price = parseInt(item.price.replace(/[^0-9]/g, ''));
+    return sum + (price * item.quantity);
+  }, 0);
+  
+  const shipping = 2000;
+  const total = subtotal + shipping;
+  
+  document.querySelector('.subtotal span').textContent = `${subtotal.toLocaleString()} FCFA`;
+  document.querySelector('.total span').textContent = `${total.toLocaleString()} FCFA`;
+}
+
+function updateQuantity(id, change) {
+  const item = cart.find(item => item.id === id);
+  if (item) {
+    item.quantity = Math.max(1, item.quantity + change);
+    updateCart();
+  }
+}
+
+function removeFromCart(id) {
+  cart = cart.filter(item => item.id !== id);
+  updateCart();
+}
+
+// Modify existing add-to-cart buttons
+document.querySelectorAll('.add-to-cart').forEach(button => {
+  button.addEventListener('click', function() {
+    const card = this.closest('.product-card');
+    const product = {
+      id: Math.random().toString(36).substr(2, 9),
+      title: card.querySelector('.product-title').textContent,
+      price: card.querySelector('.product-price').textContent,
+      image: card.querySelector('img').src,
+      alt: card.querySelector('img').alt,
+      quantity: 1
+    };
+    
+    cart.push(product);
+    updateCart();
+    document.querySelector('.cart-widget').classList.add('active');
+  });
+});
+
+// Add cart toggle functionality
+document.querySelector('.close-cart').addEventListener('click', function() {
+  document.querySelector('.cart-widget').classList.remove('active');
+});
+
+// Add checkout handler
+document.querySelector('.checkout-button').addEventListener('click', function(e) {
+  e.preventDefault();
+  if (cart.length === 0) {
+    alert('Votre panier est vide');
+    return;
+  }
+  
+  const shippingForm = document.querySelector('.shipping-form');
+  if (!shippingForm.checkValidity()) {
+    alert('Veuillez remplir toutes les informations de livraison');
+    return;
+  }
+  
+  const paymentMethod = document.querySelector('input[name="payment"]:checked');
+  if (!paymentMethod) {
+    alert('Veuillez choisir un mode de paiement');
+    return;
+  }
+  
+  // Here you would typically handle payment processing
+  alert('Redirection vers la page de paiement...');
+});
+
+// Add country filtering functionality
+document.getElementById('country-select').addEventListener('change', function(e) {
+  const selectedCountry = e.target.value;
+  const products = document.querySelectorAll('.product-card');
+  
+  products.forEach(product => {
+    if (!selectedCountry || product.dataset.country === selectedCountry) {
+      product.style.display = 'block';
+    } else {
+      product.style.display = 'none';
+    }
+  });
+});
+
+// Add to existing JavaScript
+document.querySelector('.cta-button').addEventListener('click', function() {
+  displayExclusiveCollection();
+});
+
+function displayExclusiveCollection() {
+  // Create and display modal/overlay with exclusive collection
+  const collectionOverlay = document.createElement('div');
+  collectionOverlay.className = 'collection-overlay';
+  collectionOverlay.innerHTML = `
+    <div class="exclusive-collection">
+      <div class="collection-header">
+        <h2>Collection Exclusive</h2>
+        <button class="close-collection">&times;</button>
+      </div>
+      <div class="collection-grid">
+        <div class="collection-item" data-country="ethiopia">
+          <div class="collection-origin">Éthiopie</div>
+          <img 
+            alt="Robe Habesha éthiopienne premium avec broderies complexes dorées sur tissu blanc, style traditionnel modernisé" 
+            src="https://i.etsystatic.com/22655225/r/il/326a22/2558494343/il_570xN.2558494343_pxv1.jpg" 
+            width="300" height="400">
+          <h3>Robe Habesha Premium</h3>
+          <p>Édition Limitée - Pièce Unique</p>
+          <span class="exclusive-price">180 000 FCFA</span>
+          <button class="add-to-cart">Ajouter au Panier</button>
+        </div>
+        <div class="collection-item" data-country="morocco">
+          <div class="collection-origin">Maroc</div>
+          <img 
+            alt="Kaftan marocain royal en soie avec broderies dorées élaborées et détails en cristaux, couleur bleu nuit" 
+            src="https://caftan.me/wp-content/uploads/2020/04/caftan-bleu-roi-2019-768x936-1.jpg" 
+            width="300" height="400">
+          <h3>Kaftan Royal</h3>
+          <p>Collection Artisanale</p>
+          <span class="exclusive-price">220 000 FCFA</span>
+          <button class="add-to-cart">Ajouter au Panier</button>
+        </div>
+        <div class="collection-item" data-country="nigeria">
+          <div class="collection-origin">Nigeria</div>
+          <img 
+            alt="Ensemble Adire nigérian en tissu indigo avec motifs tie-dye complexes, technique traditionnelle Yoruba" 
+            src="https://i0.wp.com/africanfabricstories.com/wp-content/uploads/2022/05/adirefashionstyle-afs-nigeria-2.png?resize=715%2C744&ssl=1" 
+            width="300" height="400">
+          <h3>Ensemble Adire Prestige</h3>
+          <p>Fait main par des Maîtres Artisans</p>
+          <span class="exclusive-price">150 000 FCFA</span>
+          <button class="add-to-cart">Ajouter au Panier</button>
+        </div>
+      </div>
+    </div>
+  `;
+  
+  document.body.appendChild(collectionOverlay);
+  
+  // Add close functionality
+  collectionOverlay.querySelector('.close-collection').addEventListener('click', function() {
+    collectionOverlay.remove();
+  });
+  
+  // Add cart functionality to new items
+  collectionOverlay.querySelectorAll('.add-to-cart').forEach(button => {
+    button.addEventListener('click', function() {
+      const item = this.closest('.collection-item');
+      const product = {
+        id: Math.random().toString(36).substr(2, 9),
+        title: item.querySelector('h3').textContent,
+        price: item.querySelector('.exclusive-price').textContent,
+        image: item.querySelector('img').src,
+        alt: item.querySelector('img').alt,
+        quantity: 1
+      };
+      
+      cart.push(product);
+      updateCart();
+      document.querySelector('.cart-widget').classList.add('active');
+    });
+  });
+}
+
+// Search functionality
+document.querySelector('.search-bar input').addEventListener('keyup', function(e) {
+  if(e.key === 'Enter') {
+    searchProducts(this.value);
+  }
+});
+
+document.querySelector('.search-bar button').addEventListener('click', function() {
+  searchProducts(document.querySelector('.search-bar input').value);
+});
+
+function searchProducts(query) {
+  // Filter products based on search query
+  const products = document.querySelectorAll('.product-card');
+  products.forEach(product => {
+    const title = product.querySelector('.product-title').textContent.toLowerCase();
+    if(title.includes(query.toLowerCase())) {
+      product.style.display = 'block';
+    } else {
+      product.style.display = 'none';
+    }
+  });
+}
+
+// Price range filter
+document.querySelector('.price-range input').addEventListener('input', function(e) {
+  const value = e.target.value;
+  filterByPrice(value);
+});
+
+function filterByPrice(maxPrice) {
+  const products = document.querySelectorAll('.product-card');
+  products.forEach(product => {
+    const price = parseInt(product.querySelector('.product-price').textContent.replace(/[^0-9]/g, ''));
+    if(price <= maxPrice) {
+      product.style.display = 'block';
+    } else {
+      product.style.display = 'none';
+    }
+  });
+}
+
+// Add product detail modal
+function showProductDetails(product) {
+  const detailOverlay = document.createElement('div');
+  detailOverlay.className = 'product-detail-overlay';
+  detailOverlay.innerHTML = `
+    <div class="product-detail-modal">
+      <button class="close-detail">&times;</button>
+      <div class="product-gallery">
+        <div class="main-image">
+          <img src="${product.image}" alt="${product.alt}" width="600" height="600">
+        </div>
+        <div class="thumbnail-gallery">
+          <img src="${product.image.replace('.jpg', '-2.jpg')}" alt="Vue alternative du ${product.title}" width="100" height="100">
+          <img src="${product.image.replace('.jpg', '-3.jpg')}" alt="Vue détaillée du ${product.title}" width="100" height="100">
+          <img src="${product.image.replace('.jpg', '-4.jpg')}" alt="Vue portée du ${product.title}" width="100" height="100">
+        </div>
+      </div>
+      <div class="product-info">
+        <h2>${product.title}</h2>
+        <div class="product-origin">${product.origin}</div>
+        <div class="product-price">${product.price}</div>
+        <div class="product-rating">
+          ${product.rating}
+          <span class="review-count">(${product.reviews} avis)</span>
+        </div>
+        <div class="product-story">
+          <h3>Histoire du Produit</h3>
+          <p>${product.story}</p>
+        </div>
+        <div class="artisan-info">
+          <h3>À Propos de l'Artisan</h3>
+          <p>${product.artisan}</p>
+        </div>
+        <button class="add-to-cart">Ajouter au Panier</button>
+      </div>
+    </div>
+  `;
+  
+  document.body.appendChild(detailOverlay);
+  
+  // Add close functionality
+  detailOverlay.querySelector('.close-detail').addEventListener('click', () => {
+    detailOverlay.remove();
+  });
+}
+
+// Update product card click handlers
+document.querySelectorAll('.product-card img').forEach(img => {
+  img.style.cursor = 'pointer';
+  img.addEventListener('click', function() {
+    const card = this.closest('.product-card');
+    const productData = {
+      title: card.querySelector('.product-title').textContent,
+      price: card.querySelector('.product-price').textContent,
+      image: this.src,
+      alt: this.alt,
+      origin: card.querySelector('.product-origin').textContent,
+      rating: card.querySelector('.product-rating').innerHTML,
+      reviews: card.querySelector('.review-count').textContent,
+      story: getProductStory(card.dataset.country),
+      artisan: getArtisanInfo(card.dataset.country)
+    };
+    showProductDetails(productData);
+  });
+});
+
+// Helper functions for product stories
+function getProductStory(country) {
+  const stories = {
+    'senegal': 'Ce magnifique boubou est confectionné dans les ateliers traditionnels de Saint-Louis, au Sénégal. La broderie complexe est réalisée à la main selon des techniques transmises de génération en génération...',
+    'mali': 'Le Bogolan est un art textile ancestral du Mali. Ce tissu est teint avec des pigments naturels et décoré de motifs symboliques qui racontent l\'histoire du peuple Bambara...',
+    // Add stories for other countries
+  };
+  return stories[country] || 'Histoire à venir...';
+}
+
+function getArtisanInfo(country) {
+  const artisans = {
+    'senegal': 'Créé par le collectif des artisans de Saint-Louis, dirigé par Maître Ousmane Diop, qui perpétue depuis 30 ans les traditions de la haute couture sénégalaise.',
+    'mali': 'Cette pièce est l\'œuvre de l\'atelier Coulibaly, une famille d\'artisans de Ségou qui maîtrise l\'art du Bogolan depuis cinq générations.',
+    // Add artisan info for other countries
+  };
+  return artisans[country] || 'Information sur l\'artisan à venir...';
+}
+</script>
+</body></html>
